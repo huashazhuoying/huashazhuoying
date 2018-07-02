@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="画沙浊影的个人博客">
 <meta property="og:description" content="如何用一行代码显示当前的时间呢？环境：&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;系统：Windows 10（64位）&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;编程语言：Java&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;jdk版本:1.8.">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-01T10:19:08.336Z">
+<meta property="og:updated_time" content="2018-07-02T16:01:22.773Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一行代码 - 有格式的显示当前时间">
 <meta name="twitter:description" content="如何用一行代码显示当前的时间呢？环境：&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;系统：Windows 10（64位）&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;编程语言：Java&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;jdk版本:1.8.">
@@ -224,15 +224,24 @@
 <p>代码见文中新旧代码</p>
 </blockquote>
 <p><br></p>
-<p>3.设置为全局变量或者静态变量，方便取值<br><figure class="highlight js"><figcaption><span>静态全局变量</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">all_get</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="built_in">String</span> date  = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd"</span>).format(<span class="keyword">new</span> <span class="built_in">Date</span>().getTime());   <span class="comment">//获取当前时间</span></span><br><span class="line">    public <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="built_in">String</span>[] args)&#123;</span><br><span class="line">        System.out.println(date);   <span class="comment">//main函数在控制台打印出本类的静态全局变量date</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">all_getnew</span></span>&#123;</span><br><span class="line">    public <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="built_in">String</span>[] args)&#123;</span><br><span class="line">        System.out.println(all_get.date);   <span class="comment">//main函数在控制台打印出all_get类的静态全局变量date</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>3.设置为全局变量或者静态方法，方便取值<br><figure class="highlight js"><figcaption><span>静态全局变量</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">All_get</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="built_in">String</span> date  = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd"</span>).format(<span class="keyword">new</span> <span class="built_in">Date</span>().getTime());   <span class="comment">//获取当前时间</span></span><br><span class="line">    public <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="built_in">String</span>[] args)&#123;</span><br><span class="line">        System.out.println(date);   <span class="comment">//main函数在控制台打印出本类的静态全局变量date</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">All_getnew</span></span>&#123;</span><br><span class="line">    public <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="built_in">String</span>[] args)&#123;</span><br><span class="line">        System.out.println(all_get.date);   <span class="comment">//main函数在控制台打印出all_get类的静态全局变量date</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <blockquote>
 <ol>
-<li>在<span style="color:red">all_get</span>类中创建静态全局变量<span style="color:#009900">date</span>在控制台打印当前时间</li>
-<li>在<span style="color:red">all_getnew</span>类中通过<span style="color:red">all_get</span>类中创建的静态全局变量<span style="color:#009900">date</span>在控制台打印当前时间</li>
-<li>通过这种方式，只要想获取当前时间，只要通过类名.静态属性名（<span style="color:red">all_get</span>.<span style="color:#009900">date</span>）就可以获取当前时间</li>
+<li>在<span style="color:red">All_get</span>类中创建静态全局变量<span style="color:#009900">date</span>在控制台打印当前时间</li>
+<li>在<span style="color:red">All_getnew</span>类中通过<span style="color:red">All_get</span>类中创建的静态全局变量<span style="color:#009900">date</span>在控制台打印当前时间</li>
+<li>通过这种方式，只要想获取当前时间，只要通过类名.静态属性名（<span style="color:red">All_get</span>.<span style="color:#009900">date</span>）就可以获取当前时间</li>
 <li>这种方式可以扩展到集合中的赋值，数据库中添加系统当前时间，界面上的时间显示等等</li>
+<li>这样写，静态变量在类的初始化过程中会被赋值，值将不会改变，要注意。</li>
+<li>实际运用时，可以采用下面的代码：</li>
 </ol>
 </blockquote>
+<figure class="highlight js"><figcaption><span>新的静态全局变量方法</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">All_get</span> </span>&#123;</span><br><span class="line">        <span class="keyword">static</span> <span class="built_in">String</span> date  = <span class="literal">null</span>;</span><br><span class="line">        public <span class="keyword">static</span> <span class="built_in">String</span> nowDate()&#123;</span><br><span class="line">            date = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>).format(<span class="keyword">new</span> <span class="built_in">Date</span>().getTime());   <span class="comment">//获取当前时间</span></span><br><span class="line">            <span class="keyword">return</span> date;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">All_getnew</span></span>&#123;</span><br><span class="line">        public <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="built_in">String</span>[] args) throws InterruptedException &#123;</span><br><span class="line">            System.out.println(All_get.nowDate());</span><br><span class="line">            Thread.sleep(<span class="number">5</span>*<span class="number">1000</span>);    <span class="comment">//5秒后执行下一句</span></span><br><span class="line">            System.out.println(All_get.nowDate());   <span class="comment">//main函数在控制台打印出all_get类的静态方法nowDate</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果：</p>
+<figure class="highlight js"><figcaption><span>新的静态全局变量方法</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2018</span><span class="number">-07</span><span class="number">-02</span> <span class="number">23</span>:<span class="number">53</span>:<span class="number">28</span></span><br><span class="line"><span class="number">2018</span><span class="number">-07</span><span class="number">-02</span> <span class="number">23</span>:<span class="number">53</span>:<span class="number">33</span>      <span class="comment">//可以看出前后相差5秒</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>用这样的方式就可以取到最新的当前时间了，对于静态的使用，可以看情况而定，我在这里为了方便演示，所以使用了静态属性修饰。</p>
+</blockquote>
+<p><br></p>
 <ul>
 <li><span style="font-size:17px;color:#00CCFF">补充</span></li>
 </ul>
@@ -551,7 +560,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">影视</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -559,7 +568,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color3">影视</a>
               </li>
             
             <div class="clearfix"></div>
