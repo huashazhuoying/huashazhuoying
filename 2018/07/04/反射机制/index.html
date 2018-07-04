@@ -17,7 +17,7 @@
 <meta property="og:description" content="概述 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;JAVA反射机制是在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意方法和属性；这种动态获取信息以及动态调用对象方法的功能称为java语言的反射机制。&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;J">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://i.imgur.com/59IwE2G.png">
-<meta property="og:updated_time" content="2018-07-04T16:17:48.271Z">
+<meta property="og:updated_time" content="2018-07-04T18:55:58.610Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="反射机制">
 <meta name="twitter:description" content="概述 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;JAVA反射机制是在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意方法和属性；这种动态获取信息以及动态调用对象方法的功能称为java语言的反射机制。&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;J">
@@ -217,12 +217,50 @@
 <h3 id="运用Class-forName-String-className-动态加载类-className需要是类的全限定名-最常用"><a href="#运用Class-forName-String-className-动态加载类-className需要是类的全限定名-最常用" class="headerlink" title="运用Class.forName(String className)动态加载类,className需要是类的全限定名(最常用)"></a><span style="color:#00CCFF">运用Class.forName(String className)动态加载类,className需要是类的全限定名(最常用)</span></h3><figure class="highlight js"><figcaption><span>Class.forName</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Class <span class="class"><span class="keyword">class</span> </span>= Class.forName(<span class="string">"com.object.Object"</span>);</span><br></pre></td></tr></table></figure>
 <p><br></p>
 <h2 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h2><ul>
-<li>创建对象，利用newInstance</li>
+<li>创建对象，利用newInstance()</li>
 </ul>
 <figure class="highlight js"><figcaption><span>创建对象</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Class c = Class.forName(<span class="string">"Employee"</span>); <span class="comment">//创建此Class 对象所表示的类的一个新实例</span></span><br><span class="line"><span class="built_in">Object</span> o = c.newInstance(); <span class="comment">//调用了Employee的无参数构造方法.</span></span><br></pre></td></tr></table></figure>
 <p><br></p>
 <blockquote>
 <p>以上的代码等同于  <figure class="highlight js"><figcaption><span>创建对象</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Employee employee = <span class="keyword">new</span> Employee();  <span class="comment">//调用了Employee的无参数构造方法.</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>newInstance(): </p>
+<ul>
+<li>弱类型。低效率。只能调用无参构造，即默认的构造函数</li>
+<li>抛出所有由被调用构造函数抛出的异常</li>
+<li>要求被调用的构造函数是可见的，也即必须是public类型的。</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>new(): </p>
+<ul>
+<li>强类型。相对高效。能调用任何public构造。</li>
+</ul>
+</blockquote>
+<p><br></p>
+<ul>
+<li>创建对象，利用getConstructor() 和 getDeclaredConstructor()</li>
+</ul>
+<figure class="highlight js"><figcaption><span>创建对象</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    private <span class="built_in">String</span> str;</span><br><span class="line">    private int num;</span><br><span class="line"></span><br><span class="line">      public Solution() &#123;</span><br><span class="line"></span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">      public Solution(<span class="built_in">String</span> str, int num) &#123;</span><br><span class="line">         <span class="keyword">this</span>.str = str;</span><br><span class="line">         <span class="keyword">this</span>.num = num;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">     public Solution(<span class="built_in">String</span> str) &#123;</span><br><span class="line">         <span class="keyword">this</span>.str = str;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     public <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="built_in">String</span>[] args) throws Exception &#123;</span><br><span class="line"></span><br><span class="line">         Class[] classes = <span class="keyword">new</span> Class[] &#123; <span class="built_in">String</span>.class, int.class &#125;;</span><br><span class="line">         Solution solution = Solution.class.getConstructor(classes).newInstance(<span class="string">"hello1"</span>, <span class="number">10</span>);</span><br><span class="line">         System.out.println(solution.str); <span class="comment">// hello1</span></span><br><span class="line"></span><br><span class="line">         Solution solution2 = solution.getClass().getDeclaredConstructor(<span class="built_in">String</span>.class).newInstance(<span class="string">"hello2"</span>);</span><br><span class="line">         System.out.println(solution2.str); <span class="comment">// hello2</span></span><br><span class="line"></span><br><span class="line">         Solution solution3 = (Solution) Class.forName(<span class="string">"Solution"</span>).getConstructor().newInstance(); <span class="comment">// 无参也可用getConstructor()</span></span><br><span class="line">         System.out.println(solution3 <span class="keyword">instanceof</span> Solution); <span class="comment">// true</span></span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<p>运行结果：<br><figure class="highlight js"><figcaption><span>创建对象</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hello1</span><br><span class="line">hello2</span><br><span class="line"><span class="literal">true</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>getConstructor()和getDeclaredConstructor()区别</li>
+</ul>
+<blockquote>
+<p>getDeclaredConstructor(Class&lt;?&gt;… parameterTypes) </p>
+<ul>
+<li>这个方法会返回制定参数类型的所有构造器，包括public的和非public的，当然也包括private的。</li>
+<li>getDeclaredConstructors()的返回结果就没有参数类型的过滤了。</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>getConstructor(Class&lt;?&gt;… parameterTypes)</p>
+<ul>
+<li>这个方法返回的是上面那个方法返回结果的子集，只返回制定参数类型访问权限是public的构造器。</li>
+<li>getConstructors()的返回结果同样也没有参数类型的过滤。</li>
+</ul>
 </blockquote>
 <p><br></p>
 <h2 id="Class类"><a href="#Class类" class="headerlink" title="Class类"></a>Class类</h2><h3 id="Class对象概述"><a href="#Class对象概述" class="headerlink" title="Class对象概述"></a><span style="color:#00CCFF">Class对象概述</span></h3><ul>
@@ -804,11 +842,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">一行代码</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">连续剧</a>
+                <a href="javascript:void(0)" class="js-tag color1">创建型模式</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -816,11 +850,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">创建型模式</a>
+                <a href="javascript:void(0)" class="js-tag color5">一行代码</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">连续剧</a>
               </li>
             
             <div class="clearfix"></div>
