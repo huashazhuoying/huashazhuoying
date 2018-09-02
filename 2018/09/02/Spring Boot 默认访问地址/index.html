@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018/8 | 画沙浊影的个人博客</title>
+  <title>Spring Boot 默认访问地址[index.html] | 画沙浊影的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="画沙浊影的个人博客">
-<meta property="og:url" content="http://yoursite.com/archives/2018/08/index.html">
+  <meta name="description" content="默认的访问地址 在 Spring MVC 中，默认的访问地址在wb.xml配置：  123&amp;lt;welcome-file-list&amp;gt;     &amp;lt;welcome-file&amp;gt;index.jsp&amp;lt;/welcome-file&amp;gt;&amp;lt;/welcome-file-list&amp;gt;  跳转到 webapp 中的 ： index.jsp   在 Spring Boot 中，直接">
+<meta name="keywords" content="Spring Boot">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring Boot 默认访问地址[index.html]">
+<meta property="og:url" content="http://yoursite.com/2018/09/02/Spring Boot 默认访问地址/index.html">
 <meta property="og:site_name" content="画沙浊影的个人博客">
+<meta property="og:description" content="默认的访问地址 在 Spring MVC 中，默认的访问地址在wb.xml配置：  123&amp;lt;welcome-file-list&amp;gt;     &amp;lt;welcome-file&amp;gt;index.jsp&amp;lt;/welcome-file&amp;gt;&amp;lt;/welcome-file-list&amp;gt;  跳转到 webapp 中的 ： index.jsp   在 Spring Boot 中，直接">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-09-02T15:39:51.267Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="画沙浊影的个人博客">
+<meta name="twitter:title" content="Spring Boot 默认访问地址[index.html]">
+<meta name="twitter:description" content="默认的访问地址 在 Spring MVC 中，默认的访问地址在wb.xml配置：  123&amp;lt;welcome-file-list&amp;gt;     &amp;lt;welcome-file&amp;gt;index.jsp&amp;lt;/welcome-file&amp;gt;&amp;lt;/welcome-file-list&amp;gt;  跳转到 webapp 中的 ： index.jsp   在 Spring Boot 中，直接">
   
     <link rel="alternative" href="/atom.xml" title="画沙浊影的个人博客" type="application/atom+xml">
   
@@ -167,60 +172,256 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Spring Boot 默认访问地址" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/06/Linux介绍 & 基本操作指令/" class="archive-article-date">
-  	<time datetime="2018-08-05T17:28:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-06</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/06/Linux介绍 & 基本操作指令/">Linux介绍 &amp; 基本操作指令</a>
+    <h1 class="article-title" itemprop="name">
+      Spring Boot 默认访问地址[index.html]
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/09/02/Spring Boot 默认访问地址/" class="archive-article-date">
+  	<time datetime="2018-09-02T13:25:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><br></p>
+<h2 id="默认的访问地址"><a href="#默认的访问地址" class="headerlink" title="默认的访问地址"></a>默认的访问地址</h2><blockquote>
+<p>在 Spring MVC 中，默认的访问地址在wb.xml配置：</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">welcome-file-list</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">welcome-file</span>&gt;</span>index.jsp<span class="tag">&lt;/<span class="name">welcome-file</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">welcome-file-list</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>跳转到 webapp 中的 ： index.jsp</li>
+</ul>
+<blockquote>
+<p>在 Spring Boot 中，直接访问：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost:8080</span><br></pre></td></tr></table></figure>
+<ul>
+<li>直接会跳转到 templates 中的 ： index.html</li>
+</ul>
+<a id="more"></a>
+<p><br></p>
+<h2 id="Spring-Boot-源码中默认的主页配置"><a href="#Spring-Boot-源码中默认的主页配置" class="headerlink" title="Spring Boot 源码中默认的主页配置"></a>Spring Boot 源码中默认的主页配置</h2><p><span style="font-size:17px;color:#00CCFF">1.5.15 Spring Boot - WebMvcAutoConfiguration 代码</span></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="title">WelcomePageHandlerMapping</span><span class="params">(Resource welcomePage, String staticPathPattern)</span> </span>&#123;</span><br><span class="line">           <span class="keyword">if</span> (welcomePage != <span class="keyword">null</span> &amp;&amp; <span class="string">"/**"</span>.equals(staticPathPattern)) &#123;</span><br><span class="line">               logger.info(<span class="string">"Adding welcome page: "</span> + welcomePage);</span><br><span class="line">               ParameterizableViewController controller = <span class="keyword">new</span> ParameterizableViewController();</span><br><span class="line">               controller.setViewName(<span class="string">"forward:index.html"</span>);</span><br><span class="line">               <span class="keyword">this</span>.setRootHandler(controller);</span><br><span class="line">               <span class="keyword">this</span>.setOrder(<span class="number">0</span>);</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<p><span style="font-size:17px;color:#00CCFF">2.0.4 Spring Boot  - WebMvcAutoConfiguration 代码</span></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Bean</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> WelcomePageHandlerMapping <span class="title">welcomePageHandlerMapping</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">    ApplicationContext applicationContext)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> WelcomePageHandlerMapping(</span><br><span class="line">        <span class="keyword">new</span> TemplateAvailabilityProviders(applicationContext),</span><br><span class="line">        applicationContext, getWelcomePage(),</span><br><span class="line">        <span class="keyword">this</span>.mvcProperties.getStaticPathPattern());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> Optional&lt;Resource&gt; <span class="title">getWelcomePage</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    String[] locations = getResourceLocations(</span><br><span class="line">        <span class="keyword">this</span>.resourceProperties.getStaticLocations());</span><br><span class="line">    <span class="keyword">return</span> Arrays.stream(locations).map(<span class="keyword">this</span>::getIndexHtml)</span><br><span class="line">        .filter(<span class="keyword">this</span>::isReadable).findFirst();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> Resource <span class="title">getIndexHtml</span><span class="params">(String location)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.resourceLoader.getResource(location + <span class="string">"index.html"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>在 Spring Boot 中默认的访问页面是：index.html，在配置文件中可以找到相应的代码。</p>
+</blockquote>
+<p><br></p>
+<h2 id="修改-Spring-Boot-默认访问页面"><a href="#修改-Spring-Boot-默认访问页面" class="headerlink" title="修改 Spring Boot 默认访问页面"></a>修改 Spring Boot 默认访问页面</h2><blockquote>
+<p>我们可以通过 Controller 在访问 <a href="http://localhost:8080" target="_blank" rel="noopener">http://localhost:8080</a> 时跳转到想要的主页 </p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">admin</span></span>&#123;</span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"/"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">index</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"login.html"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>加上这样的代码，在访问时就会把 “/” 转到 “login.html”上，也就变相修改了默认的主页。</li>
+</ul>
+<p><br></p>
+<h2 id="注"><a href="#注" class="headerlink" title="注"></a>注</h2><ul>
+<li>参考资料：Segmentfault（<a href="https://segmentfault.com/q/1010000005650533" target="_blank" rel="noopener">点我进入</a>）<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CSDN（<a href="https://blog.csdn.net/j903829182/article/details/76944989" target="_blank" rel="noopener">点我进入</a>）</li>
+</ul>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你的喜欢<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/zhifubao.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/weixin.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring Boot</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      <span id="busuanzi_container_page_pv">
+      | 总阅读量<span id="busuanzi_value_page_pv"></span>
+      </span>
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/框架//" class="article-tag-list-link color3">框架</a>
+        		</li>
+      		
+		</ul>
+	</div>
 
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/09/02/Spring Boot 默认访问地址/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2018/08/06/Linux介绍 & 基本操作指令/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Linux介绍 &amp; 基本操作指令</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#默认的访问地址"><span class="toc-number">1.</span> <span class="toc-text">默认的访问地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Spring-Boot-源码中默认的主页配置"><span class="toc-number">2.</span> <span class="toc-text">Spring Boot 源码中默认的主页配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改-Spring-Boot-默认访问页面"><span class="toc-number">3.</span> <span class="toc-text">修改 Spring Boot 默认访问页面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注"><span class="toc-number">4.</span> <span class="toc-text">注</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "http://yoursite.com/2018/09/02/Spring Boot 默认访问地址/",
+  owner: 'huashazhuoying',
+  repo: 'hszy.github.io',
+  oauth: {
+    client_id: 'e4cdb74f1dccdf8d0758',
+    client_secret: '7948362999c5f68d47e3e1864ac3afd789dba810',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
+  
 
 
           </div>
@@ -254,8 +455,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
